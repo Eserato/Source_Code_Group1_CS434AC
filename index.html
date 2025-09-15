@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách sách</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #fafafa; }
+
+    header {
+      background: white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    main {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Sidebar filter */
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+
+    .sidebar h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 14px;
+      gap: 6px;
+    }
+
+    .sidebar input[type="checkbox"] {
+      width: 18px; height: 18px;
+    }
+
+    .sidebar select,
+    .sidebar input[type="date"] {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+    .btn.apply { background: #444; color: white; }
+    .btn.clear { background: #ddd; }
+
+    /* Content */
+    .content {
+      flex: 1;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .book-card {
+      display: flex;
+      gap: 16px;
+      padding: 12px;
+      background: #f9f2f2;
+      border-radius: 6px;
+      align-items: center;
+    }
+
+    .book-card img {
+      width: 70px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .book-info h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .book-info p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📚 MyPage</div>
+    <nav class="nav">
+      <a href="#">Trang Chủ</a>
+      <a href="#">Sách</a>
+      <a href="#">Văn Phòng Phẩm</a>
+      <a href="#">Tạp Chí</a>
+      <a href="#">E-Book</a>
+      <a href="#">Giới Thiệu</a>
+      <a href="#">Liên Hệ</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Category</h3>
+      <label><input type="checkbox"> Lịch sử</label>
+      <label><input type="checkbox"> Tiểu thuyết</label>
+      <label><input type="checkbox"> Khoa học</label>
+
+      <h3>Tác giả</h3>
+      <select>
+        <option>Tác giả</option>
+        <option>Lý Thế Cường</option>
+        <option>Paulo Coelho</option>
+      </select>
+
+      <h3>Giá</h3>
+      <select>
+        <option>Giá</option>
+        <option>Dưới 100k</option>
+        <option>100k - 200k</option>
+      </select>
+
+      <h3>Ngày phát hành</h3>
+      <input type="date" value="2025-04-01">
+
+      <button class="btn apply">Áp dụng</button>
+      <button class="btn clear">Xóa</button>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm...">
+        <button class="btn apply">Tìm</button>
+      </div>
+
+      <div class="book-list">
+        <div class="book-card">
+          <img src="https://via.placeholder.com/70x100" alt="">
+          <div class="book-info">
+            <h4>Tư Duy Phản Biện</h4>
+            <p>Lý Thế Cường</p>
+            <p>100.000 VND</p>
+          </div>
+        </div>
+        <div class="book-card">
+          <img src="https://via.placeholder.com/70x100" alt="">
+          <div class="book-info">
+            <h4>Nhà Giả Kim</h4>
+            <p>Paulo Coelho</p>
+            <p>100.000 VND</p>
+          </div>
+        </div>
+        <div cl
