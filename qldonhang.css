@@ -1,0 +1,48 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo-font {
+  font-family: "Great Vibes", cursive;
+}
+
+/* Bộ lọc input (ngày + trạng thái) */
+.filter-input {
+  background-color: #ffffff;
+  border-radius: 9999px; /* pill/rounded-full */
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem; /* text-sm */
+  cursor: pointer;
+  border: 1px solid #d1d5db; /* gray-300 */
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #9ca3af; /* gray-400 */
+  box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.2);
+}
+
+/* Badge trạng thái */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap; /* luôn 1 dòng */
+}
+
+.badge-xuli {
+  background-color: #f59e0b; /* yellow-500 */
+}
+
+.badge-vanchuyen {
+  background-color: #3b82f6; /* blue-500 */
+}
+
+.badge-dagiao {
+  background-color: #10b981; /* green-500 */
+}
