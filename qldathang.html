@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chi tiết sách — Demo</title>
+    <style>
+      :root {
+        --accent: #2b9cff;
+        --muted: #777;
+        --card-bg: #fff;
+        --radius: 10px;
+        --shadow: 0 6px 20px rgba(20, 20, 30, 0.08);
+        --fw-medium: 600;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #f3f5f7;
+        color: #111;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 28px auto;
+        padding: 20px;
+        display: flex;
+        gap: 28px;
+      }
+
+      /* left gallery */
+      .gallery {
+        width: 320px;
+      }
+      .main-image {
+        border-radius: 8px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #eef7ff, #fff);
+        box-shadow: var(--shadow);
+      }
+      .main-image img {
+        display: block;
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+      }
+
+      .thumbs {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .thumbs img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+      .thumbs img.active {
+        border-color: var(--accent);
+      }
+
+      /* right column */
+      .meta {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .meta small {
+        color: var(--muted);
+      }
+
+      .author {
+        color: #333;
+        font-weight: 600;
+      }
+
+      .rating-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .stars {
+        display: inline-flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .star {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+      }
+
+      .format-toggle {
+        display: flex;
+        gap: 12px;
+        margin-top: 6px;
+      }
+      .format-btn {
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: 1px solid #d8dbe0;
+        background: #f7f8fa;
+        cursor: pointer;
+        font-weight: 600;
+        min-width: 120px;
+        text-align: center;
+      }
+      .format-btn.primary {
+        background: #fff;
+        border-color: var(--accent);
+        box-shadow: 0 6px 18px rgba(43, 156, 255, 0.12);
+        color: var(--accent);
+      }
+
+      .description {
+        color: #333;
+        line-height: 1.5;
+        margin-top: 6px;
+        font-size: 15px;
+      }
+
+      .purchase-area {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 18px;
+        flex-wrap: wrap;
+      }
+
+      .price-block {
+        background: linear-gradient(180deg, #fff, #fbfdff);
+        border-radius: 8px;
+        padding: 12px 16px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 140px;
+      }
+      .price-block .label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .price-block .price {
+        font-size: 22px;
+        font-weight: 800;
+      }
+      .price-block .old {
+        color: var(--muted);
+        text-decoration: line-through;
+        font-size: 13px;
+      }
+
+      .cta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-left: auto;
+      }
+      .btn {
+        padding: 12px 18px;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+        min-width: 120px;
+      }
+      .btn.cart {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(43, 156, 255, 0.18);
+      }
+      .btn.buy {
+        background: #fff;
+        border: 1px solid #e6e9ef;
+        color: #222;
+      }
+
+      /* small screens */
+      @media (max-width: 880px) {
+        .container {
+          padding: 16px;
+          flex-direction: column;
+          max-width: 720px;
+        }
+        .gallery {
+          width: 100%;
+        }
+        .main-image img {
+          height: 380px;
+        }
+        .cta {
+          margin-left: 0;
+          width: 100%;
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" role="main">
+      <!-- left: images -->
+      <aside class="gallery" aria-label="Gallery">
+        <div class="main-image" id="mainImage">
+          <!-- Thay src bên dưới bằng đường dẫn ảnh sách của bạn -->
+          <img
+            src="https://via.placeholder.com/400x600.png?text=Cover+Image"
+            alt="Bìa sách"
+          />
+        </div>
+
+        <div class="thumbs" id="thumbs">
+          <img
+            src="https://via.placeholder.com/120x180.png?text=1"
+            class="active"
+            alt="thumb1"
+          />
+          <img
+            src="https://via.placeholder.com/120x180.png?text=2"
+            alt="thumb2"
+          />
+          <img
+            src="https://via.placeholder.com/120x180.png?text=3"
+            alt="thumb3"
+          />
+          <img
+            src="https://via.placeholder.com/120x180.png?text=4"
+            alt="thumb4"
+          />
+        </div>
+      </aside>
+
+      <!-- right: meta, price, cta -->
+      <section class="meta" aria-label="Thông tin sản phẩm">
+        <div>
+          <div class="title">Pen and Ink Drawing: A Simple Guide</div>
+          <div style="margin-top: 6px">
+            <div class="author">by Alphonso Dunnn</div>
+            <small>Paperback · Illustrated · December 11, 2015</small>
+          </div>
+        </div>
+
+        <div class="rating-row" aria-hidden="true">
+          <div class="stars" title="4.5 trên 5">
+            <!-- 5 star SVGs (dạng filled for demo) -->
+            <svg
+              class="star"
+              viewBox="0 0 24 24"
+              fill="#f5c041"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"
+              />
+            </svg>
+            <svg
+              class="star"
+              viewBox="0 0 24 24"
+              fill="#f5c041"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"
+              />
+            </svg>
+            <svg
+              class="star"
+              viewBox="0 0 24 24"
+              fill="#f5c041"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"
+              />
+            </svg>
+            <svg
+              class="star"
+              viewBox="0 0 24 24"
+              fill="#f5c041"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"
+              />
+            </svg>
+            <svg
+              class="star"
+              viewBox="0 0 24 24"
+              fill="#ddd"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27z"
+              />
+            </svg>
+          </div>
+          <div>45 review</div>
+        </div>
+
+        <div class="format-toggle" role="tablist" aria-label="Chọn định dạng">
+          <button class="format-btn">
+            Kindle<br /><small style="font-weight: 600; color: #333"
+              >$9.99</small
+            >
+          </button>
+          <button class="format-btn primary" aria-pressed="true">
+            Paperback<br /><small style="font-weight: 600; color: #cc2b2b"
+              >$19.99</small
+            >
+          </button>
+        </div>
+
+        <p class="description">
+          Pen &amp; Ink Drawing: A Simple Guide covers the essential aspects of
+          pen and ink drawing and more. It explores basic materials and
+          instruments; fundamental properties of strokes and pen control; key
+          elements of shading; and indispensable techniques for creating vibrant
+          textures.
+        </p>
+
+        <div class="purchase-area" aria-label="Mua hàng">
+          <div class="price-block" aria-hidden="false">
+            <div class="label">Format: Paperback</div>
+            <div class="price">$17.99</div>
+            <div class="old">
+              List price:
+              <span style="text-decoration: line-through">$20</span> · Save: $2
+            </div>
+          </div>
+
+          <div class="cta" role="group" aria-label="Hành động">
+            <button class="btn cart" onclick="alert('Thêm vào giỏ (demo)')">
+              Add to Cart
+            </button>
+            <button class="btn buy" onclick="alert('Mua ngay (demo)')">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Small JS: click thumb -> replace main image, highlight active thumb
+      document.querySelectorAll("#thumbs img").forEach((img) => {
+        img.addEventListener("click", (e) => {
+          document
+            .querySelectorAll("#thumbs img")
+            .forEach((t) => t.classList.remove("active"));
+          e.currentTarget.classList.add("active");
+          // đổi src ảnh chính (demo: dùng cùng src thay đổi)
+          const newSrc = e.currentTarget.src.replace(
+            /120x180|120x180|120x180|120x180/,
+            "400x600"
+          );
+          document.querySelector("#mainImage img").src = newSrc;
+        });
+      });
+    </script>
+  </body>
+</html>
