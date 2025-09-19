@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Detail</title>
+  <!-- Font Awesome để lấy icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+    }
+
+    /* nút back */
+    .back-btn {
+      font-size: 18px;
+      text-decoration: none;
+      color: black;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      background: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* menu */
+    .menu {
+      text-align: center;
+      margin: 15px 0 30px;
+    }
+    .menu a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: normal;
+    }
+    .menu a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* layout */
+    .container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .book-img img {
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .book-info {
+      max-width: 600px;
+    }
+    .book-info h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .book-info h3 {
+      margin: 8px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .book-info p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .author {
+      font-size: 14px;
+      font-style: italic;
+      margin-top: 8px;
+    }
+    .btn {
+      margin-top: 15px;
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn:hover {
+      opacity: 0.8;
+    }
+
+    /* pagination */
+    .pagination {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .pagination a {
+      margin: 0 5px;
+      padding: 6px 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+    .pagination a.active {
+      background: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Nút back -->
+  <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
+  <!-- Menu -->
+  <div class="menu">
+    <a href="#">Sách văn học</a>
+    <a href="#" class="active">Truyện Tranh</a>
+    <a href="#">Sách phi hư cấu</a>
+    <a href="#">Sách self-help</a>
+  </div>
+
+  <!-- Nội dung chính -->
+  <div class="container">
+    <div class="book-img">
+      <img src="https://sachtiengviet.com/cdn/shop/products/1ebc0329dd3f5d28bc4ce7d4b9d0bf08.jpg?v=1700782977" alt="Blue Lock">
+    </div>
+    <div class="book-info">
+      <h2>BLUE LOCK - Số 19</h2>
+      <h3>Sự trở lại của người hùng</h3>
+      <p>
+        Tập 19 Blue Lock xoay quanh trận đấu nảy lửa giữa Bastard München và Italy Ubers. 
+        Bastard München chơi xoay quanh Michael Kaiser, ngôi sao thiên tài đúng cấp “ngôi sao trung tâm” 
+        với kỹ thuật, tầm nhìn và khả năng ghi bàn đa dạng. Ngược lại, Italy Ubers dưới sự dẫn dắt của Marc Snuffy 
+        lại chọn lối chơi phòng ngự – phản công kỷ luật, gây nhiều khó khăn cho đối thủ. 
+        Trận đấu trở nên kịch tính đến nghẹt thở, khi cả hai bên đều có vũ khí riêng để đánh bại đối phương.
+      </p>
+      <p class="author">Tác giả: Muneyuki Kaneshiro</p>
+      <button class="btn">Thêm vào giỏ hàng</button>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <a href="#">&laquo; Previous</a>
+    <a href="#" class="active">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">...</a>
+    <a href="#">68</a>
+    <a href="#">Next &raquo;</a>
+  </div>
+</body>
+</html>
