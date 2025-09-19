@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+    }
+    /* Menu */
+    .navbar {
+      display: flex;
+      gap: 20px;
+      background: #f2f2f2;
+      padding: 10px 30px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Thông báo giỏ hàng */
+    .cart-info {
+      padding: 20px 30px;
+    }
+    .cart-info input, .cart-info button {
+      margin: 5px;
+      padding: 6px 10px;
+    }
+
+    /* Bảng giỏ hàng */
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #f7f7f7;
+    }
+    .delete-icon {
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Tổng tiền */
+    .total {
+      width: 90%;
+      margin: 20px auto;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    /* Nút hành động */
+    .actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+    .actions button {
+      background: #d97a1e;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .actions button:hover {
+      background: #b86416;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Thanh menu -->
+  <div class="navbar">
+    <a href="#">Trang Chủ</a>
+    <a href="#">Sách</a>
+    <a href="#">Văn Phòng Phẩm</a>
+    <a href="#">Tạp Chí</a>
+    <a href="#">E-Book</a>
+    <a href="#">Giới Thiệu</a>
+    <a href="#">Liên Hệ</a>
+  </div>
+
+  <!-- Thông tin giỏ hàng -->
+  <div class="cart-info">
+    <p>You have 2 items in this shopping cart.</p>
+    <p>To change quantity, edit the “Quantity“ box and click “Update”</p>
+    <input type="text" placeholder="Product Code">
+    <input type="number" min="1" value="1">
+    <button>Cập nhật</button>
+  </div>
+
+  <!-- Bảng giỏ hàng -->
+  <table>
+    <thead>
+      <tr>
+        <th>Tiêu Đề Sản Phẩm</th>
+        <th>Số Lượng</th>
+        <th>Giá Tiền</th>
+        <th>Tổng Tiền</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Con Mèo dạy hải âu bay</td>
+        <td>1</td>
+        <td>135000 đ</td>
+        <td>135000 đ</td>
+        <td class="delete-icon">🗑️</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tổng tiền -->
+  <div class="total">
+    Tổng Tiền : 135000 đ
+  </div>
+
+  <!-- Nút thao tác -->
+  <div class="actions">
+    <button>Clear</button>
+    <button>Update</button>
+    <button>Check out</button>
+    <button>Continue shopping</button>
+  </div>
+
+</body>
+</html>
