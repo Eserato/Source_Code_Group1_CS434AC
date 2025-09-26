@@ -1,0 +1,9 @@
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.csproj.AssemblyReference.cache
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.GeneratedMSBuildEditorConfig.editorconfig
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.AssemblyInfoInputs.cache
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.AssemblyInfo.cs
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.csproj.CoreCompileInputs.cache
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.MvcApplicationPartsAssemblyInfo.cs
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.MvcApplicationPartsAssemblyInfo.cache
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.RazorAssemblyInfo.cache
+D:\CongCu&PhuongPhapTK-QL\BE_XemChiTietSach\obj\Debug\net6.0\BookStore.RazorAssemblyInfo.cs

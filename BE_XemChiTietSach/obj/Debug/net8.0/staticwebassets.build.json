@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "PlFk7Z4rfrtLM1IOwUR1l1Tjx+HN3TdrlpgcVB8XkuY=",
+  "Source": "BookStore",
+  "BasePath": "_content/BookStore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BookStore\\wwwroot",
+      "Source": "BookStore",
+      "ContentRoot": "D:\\CongCu&PhuongPhapTK-QL\\BE_XemChiTietSach\\wwwroot\\",
+      "BasePath": "_content/BookStore",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\CongCu&PhuongPhapTK-QL\\BE_XemChiTietSach\\wwwroot\\images\\sach.jpg",
+      "SourceId": "BookStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CongCu&PhuongPhapTK-QL\\BE_XemChiTietSach\\wwwroot\\",
+      "BasePath": "_content/BookStore",
+      "RelativePath": "images/sach.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\sach.jpg"
+    }
+  ]
+}

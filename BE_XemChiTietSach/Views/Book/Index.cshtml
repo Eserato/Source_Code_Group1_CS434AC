@@ -1,0 +1,283 @@
+@model BookStore.Models.Book
+@{
+    ViewData["Title"] = "Chuyện con mèo dạy hải âu bay";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 2.Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+        
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .user-actions a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        
+        .nav-main {
+            background-color: #34495e;
+            border-radius: 4px;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+        
+        .nav-menu li {
+            text-align: center;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #1abc9c;
+        }
+        
+        .book-detail-container {
+            background: white;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .book-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .book-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        
+        .book-content {
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .book-cover {
+            flex: 0 0 200px;
+        }
+        
+        .book-cover img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .book-details {
+            flex: 1;
+        }
+        
+        .book-info {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        .book-info td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        .book-info td:first-child {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            width: 25%;
+        }
+        
+        .separator {
+            border-top: 2px solid #ddd;
+            margin: 20px 0;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .buy-button:hover {
+            background-color: #c9302c;
+        }
+        
+        .description {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .description p {
+            margin-bottom: 15px;
+        }
+        
+        .price-highlight {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .book-title-main {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-top">
+                <a href="/" class="logo">2.Page</a>
+                <div class="user-actions">
+                    <a href="#">Đăng nhập</a>
+                    <a href="#">Giỏ hàng</a>
+                </div>
+            </div>
+            
+            <nav class="nav-main">
+                <ul class="nav-menu">
+                    <li><a href="#">TRANG<br>CHỦ</a></li>
+                    <li><a href="#">SÁCH</a></li>
+                    <li><a href="#">VĂN PHÒNG<br>PHẨM</a></li>
+                    <li><a href="#">QUÀ<br>TẶNG</a></li>
+                    <li><a href="#">KHUYẾN<br>MÃI</a></li>
+                    <li><a href="#">LIÊN<br>HỆ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="book-detail-container">
+            <div class="book-header">
+                <h1>Chuyện con mèo dạy hải âu bay </h1>
+            </div>
+            
+            <div class="book-content">
+                <!-- THÊM PHẦN HÌNH ẢNH SÁCH -->
+                <div class="book-cover">
+                    <img src="@Model.CoverImage" alt="Bìa sách @Model.Title" 
+                         onerror="this.src='https://via.placeholder.com/200x300/3498db/ffffff?text=@Model.Title'">
+                </div>
+                
+                <div class="book-details">
+                    <!-- THÊM TIÊU ĐỀ SÁCH -->
+                    <div class="book-title-main">@Model.Title</div>
+                    
+                    <table class="book-info">
+                        <tr>
+                            <td>Tác giả:</td>
+                            <td>@Model.Author</td>
+                        </tr>
+                        <tr>
+                            <td>NXB:</td>
+                            <td>@Model.Publisher</td>
+                        </tr>
+                        <tr>
+                            <td>Quốc gia:</td>
+                            <td>@Model.Country</td>
+                        </tr>
+                        <tr>
+                            <td>Thể loại:</td>
+                            <td>@Model.Category</td>
+                        </tr>
+                        <tr>
+                            <td>Số trang:</td>
+                            <td>@Model.Pages</td>
+                        </tr>
+                        <tr>
+                            <td>Đã bán:</td>
+                            <td>@Model.Sold</td>
+                        </tr>
+                        <tr>
+                            <td>Giá bán:</td>
+                            <td class="price-highlight">@Model.Price.ToString("N0") đ</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="separator"></div>
+                    
+                    <a href="@Url.Action("Buy", "Book")" class="buy-button">Mua ngay</a>
+                </div>
+            </div>
+            
+            <div style="padding: 0 20px 20px 20px;">
+                <div class="description">
+                    <p>
+                        <strong>@Model.Title</strong> (tiếng Tây Ban Nha: Historia de una gaviota y del gato que le enseñó a volar) là kiệt tác dành cho thiếu nhi của nhà văn Chile nối tiếng Luis Sepúlveda – tác giả của cuốn Lão già mê đọc truyền tình đã được dịch ra 60 thứ tiếng và bán được 18 triệu bán khắp thế giới. [1]
+                    </p>
+                    <p>
+                        @Model.Title, xuất bán lần đầu năm 1996, cũng đã bán được 5 triệu bán khắp thế giới.[2] Tác phẩm không chỉ là một câu chuyện ấm áp, trong sáng, dể thương về loài vật mà còn chuyến tải thông điệp về trách nhiệm với môi trường về sự sẻ chia và yêu thương cũng như ý nghĩa của những nỗ lực – <em>"Chỉ những kẻ dám mới có thể bay"</em>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
