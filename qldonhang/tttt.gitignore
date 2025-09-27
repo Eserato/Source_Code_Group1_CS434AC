@@ -1,0 +1,73 @@
+######################
+## Visual Studio / .NET Core
+######################
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# VS cache files
+.vs/
+*.dbmdl
+*.bak
+*.backup
+*.BLOB
+*.core
+*.pdb
+
+# Publish
+publish/
+wwwroot/dist/
+wwwroot/lib/
+
+# Environment / secrets
+*.env
+*.env.*
+appsettings.*.local.json
+
+######################
+## Node.js / Frontend
+######################
+node_modules/
+bower_components/
+jspm_packages/
+typings/
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+.nuxt/
+out/
+coverage/
+*.tsbuildinfo
+
+# IDE folders
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+######################
+## Others
+######################
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
